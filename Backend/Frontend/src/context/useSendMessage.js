@@ -8,16 +8,13 @@
     
     const sendMessage=async(message)=>{
         setLoading(true);
-        // setSendingMessage(true);
+       
             try{
                 const res=await axios.post(
                     `/api/message/send/${selectedConversation._id}`,
                     {message}
                 );
                  setMessages([...messages,res.data]);
-                // addMessage(res.data);
-                //  setSendingMessage(false);
-          
                
                 setLoading(false);
             }catch(error){
